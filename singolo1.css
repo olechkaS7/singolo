@@ -21,6 +21,10 @@ button {
 	padding: 0;
 }
 
+ul {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -75,7 +79,6 @@ a {
     line-height: 12px;
     color: #fff;
     font-weight: 700;
-    list-style: none;
 }
 
 .nav-header__item {
@@ -106,13 +109,34 @@ a {
 
 /* slider ------------------------------------------------------------------------*/
 
-slider-block {
-    background: #eb5055;
-	border-bottom: 6px solid #ea676b;
+.slider {
+    box-sizing: border-box;
+    height: 600px;
+    padding: 57px 0 57px 0;
+    background-color:#f06c64;
+    border-bottom: 6px solid  #ea676b;
 }
-.part-slider {
-    margin: 0 auto;
-    padding: 60px 0;
-	position: relative;
+
+.wrapper-slider {
+    box-sizing: border-box;
     max-width: 1020px;
+    padding: 0 40px 0 40px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.slider-block {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;    
+}
+
+.slider-block__item {
+    padding: 0 35px;
+}
+
+/* .slider-block__item > img {
+    
+} */
