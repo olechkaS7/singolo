@@ -53,24 +53,11 @@ a {
     color: #ffffff;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-.header-logo > a {
-    position: relative;
     letter-spacing: -0.20px;
-    color: inherit;
 }
 
-.header-logo > a > span {
+.header-logo > span {
     color: #f06c64;
-}
-
-.header-logo > a:hover {
-    color: #f06c64;
-}
-
-.header-logo > a:active {
-    color: red;
 }
 
 .nav-header {
@@ -233,11 +220,39 @@ a {
 .pen-icon.services-block__item::before {
     background-image: url(./assets/images/pen.svg);
 }
+.bulb-icon.services-block__item::before {
+    background-image: url(./assets/images/bulb.svg);
+}
 
+.heart-icon.services-block__item::before {
+    background-image: url(./assets/images/heart.svg);
+}
+
+.phone-icon.services-block__item::before {
+    background-image: url(./assets/images/phone.svg);
+}
+
+.bubble-icon.services-block__item::before {
+    background-image: url(./assets/images/bubble.svg);
+}
+
+.star-icon.services-block__item::before {
+    background-image: url(./assets/images/star.svg);
+}
 .services-block__item > h3 {
-    
+    font-size: 18px;
+    line-height: 18px;
+    color: #666d89;
+    font-weight: 900;
+    text-transform: capitalize;
 }
 
 .services-block__item > p {
-
+    padding-top: 10px;
+    font-size: 12px;
+    line-height: 22px;
+    color: #767e9e;
+    font-weight: 400;
+    text-align: justify;
 }
+
