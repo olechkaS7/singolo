@@ -53,7 +53,7 @@ a {
     color: #ffffff;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: -0.20px;
+    letter-spacing: -0.45px;
 }
 
 .header-logo > span {
@@ -81,9 +81,11 @@ a {
 
 .nav-header__item > a {
     font-size: inherit;
+    line-height: 8px;
+    word-spacing: 40px;
     color: inherit; 
     text-transform: uppercase;
-    letter-spacing: 0.26px;
+    letter-spacing: 0.35px;
 }
 
 .nav-header__item > a:hover {
@@ -170,19 +172,21 @@ a {
 
 .our-services-title {
     font-size: 30px;
-    line-height: 30px;
+    line-height: 23px;
     color: #666d89;
     font-weight: 900;
     text-align: left;
+    letter-spacing: -0.20px;
 }
 
 .our-services-text {
-    padding: 19px 0 0 0;
+    padding-top: 24px;
     font-size: 18px;
     line-height: 30px;
     color: #767e9e;
     font-weight: 300;
     text-align: justify;
+    letter-spacing: 0px;
 }
 
 .our-services-block {
@@ -197,7 +201,7 @@ a {
     position: relative;
     max-width: 299px;
     padding-left: 80px;
-    padding-bottom: 30px;
+    padding-bottom: 29.5px;
     flex-grow: 1;
 }
 
@@ -212,6 +216,7 @@ a {
     height: 59px;
     border-radius: 50%;
     border: 2px solid #666d89;
+    word-wrap:break-word;
     background-size: initial;
     background-position: center;
     background-repeat: no-repeat;
@@ -245,14 +250,19 @@ a {
     color: #666d89;
     font-weight: 900;
     text-transform: capitalize;
+    word-spacing: 0.4px;
+    letter-spacing: -0.15px;
 }
 
 .services-block__item > p {
     padding-top: 10px;
     font-size: 12px;
-    line-height: 22px;
+    line-height: 1.8;
     color: #767e9e;
     font-weight: 400;
     text-align: justify;
+    word-spacing: -2px;
+    letter-spacing: -0.2px;
+    word-wrap: break-word;
 }
 
