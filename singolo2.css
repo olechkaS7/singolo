@@ -1,0 +1,18 @@
+@import "fonts.css";
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', Arial, sans-serif;
+}
+   
+p,
+a,
+h2,
+h3,
+img,
+button {
+	margin: 0;
+	padding: 0;
+}
+  
