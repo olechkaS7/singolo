@@ -244,6 +244,7 @@ a {
 .star-icon.services-block__item::before {
     background-image: url(./assets/images/star.svg);
 }
+
 .services-block__item > h3 {
     font-size: 18px;
     line-height: 18px;
