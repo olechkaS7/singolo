@@ -25,9 +25,8 @@ a {
 
 .portfolio {
     box-sizing: border-box;
-    height: 864px;
     padding-top: 57px;
-    padding-bottom:65px;
+    padding-bottom: 65px;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
 }
@@ -37,12 +36,9 @@ a {
     max-width: 1020px;
     padding: 0px 40px;
     margin: 0 auto;
-    justify-content: space-between;
-    align-items: flex-end;
-
 }
+
 .portfolio-title {
-    padding-bottom: 5px;
     font-size: 30px;
     line-height: 1;
     letter-spacing: 0.16px;
@@ -52,13 +48,13 @@ a {
 }
 
 .portfolio-text {
-    padding-top: 15px;
+    margin-top: 20px;
     font-size: 18px;
     line-height: 30px;
+    text-align: justify;
     letter-spacing: -0.25px;
     color: #767e9e;
-    font-weight: 300
-    letter-spacing: 50px;
+    font-weight: 300;
 }
 
 .portfolio__buttons {
@@ -67,30 +63,34 @@ a {
 
 .tab {
     padding: 3px 6px;
+    margin-right: 10px;
     border-radius: 5px;
-    letter-spacing: -0.2px;
-    background-color: inherit;
     border: 1px solid #666d89;
-    text-transform: capitalize;
-    cursor: pointer;
+    background-color: inherit;
     font-size: 12px;
     line-height: 12px;
     color: #767e9e;
-    font-family: "Lato";
+    font-family: inherit;
     font-weight: 400;
+    letter-spacing: -0.2px;
+    text-transform: capitalize;
+    cursor: pointer;
 }
 
-.tab--active > button {
+.tab--active {
     color: #dedede;
-  }
-  
-  .tab > button:hover {
+    border: 1px solid #c5c5c5;
+}
+
+.tab:hover {
     color: #f06c64;
-  }
+    border: 1px solid #f06c64;
+}
   
-  .tab > button:active {
-    color: red;
-  }
+.tab:active {
+    color: #dedede;
+    border: 1px solid #c5c5c5;
+}
 
 .portfolio-images {
     margin-top: 21px;
@@ -102,74 +102,75 @@ a {
     row-gap: 20px;
     overflow: hidden;
 }
+
 .portfolio-images__item {
+    display: block;
     height: 187px;
     width: 220px;
 }
+
 /* about----------------------------------------------------------------------*/
+
 .about {
-    margin: auto;
+    box-sizing: border-box;
+    padding: 25px 0 30px 0;
     width: 100%;
-    height: 728.5px;
     background-color: #f2f2f2;
-    border-bottom: 6px solid #fff
+    border-bottom: 6px solid #fff;
 }
 
 .wrapper-about{
+    box-sizing: border-box;
     margin: auto;
-    width: 1020px;
-    height: 728.5px;
-    background-color: #f2f2f2;
-    display: flex;
-    flex-direction: column;
+    max-width: 1020px;
+    padding: 0 40px;
 }
 
 .about-title {
     font-size: 30px;
-    line-height: 18px;
+    line-height: 1;
     color: #666d89;
     font-weight: 900;
-    padding-left: 40px;
-    margin-top: 68px;
     letter-spacing: -0.15px;
     text-transform: capitalize;
 }
 
 .about-text {
-    padding: 8px 40px 0px 40px;
     margin-top: 18px;
-    width: 940px;
-    height: 57px;
     font-size: 18px;
     line-height: 30px;
     letter-spacing: 0.09px;
     color: #767e9e;
     font-weight: 300;
-    line-height: 30px;
+    text-align: justify;
 }
 
 .employee-info {
-    padding: 0 40px;
-    justify-content: space-between;
     margin-top: 45.5px;
     display: flex;
+    justify-content: space-between;
+}
+
+.employee-data {
+    width: 300px;
 }
 
 .employee-img {
-    margin-top: 2.5px;
-    width: 300px;
-    height: 300px;
-    background-color: #464b5e;
+    display: block;
+    width: 100%;
+    height: auto;
 }
-/* emploe----------------------------------------------------------------------*/
+
+.employee-img.pixel {
+    transform: translateX(-1px);
+}
 
 .employee-name {
+    margin-top: 14px;
     font-size: 18px;
     line-height: 1;
     color: #666d89;
     font-weight: 900;
-    text-align: left;
-    margin-top: 14px;
     letter-spacing: -0.1px;
 }
 
@@ -177,13 +178,57 @@ a {
     margin-top: 10px;
     font-size: 12px;
     line-height: 22px;
-    height: 175px;
     font-weight: 400;
-    width: 300px;
     color: #767e9e;
-    text-align: left;
+    text-align: justify;
     letter-spacing: -0.03px;
 }
+
+.employee-socials {
+    margin-top: 20px;
+    font-size: 0;
+    line-height: 0;
+}
+
+.social-tabs__item {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 50%;
+    border: 1px solid #666d89;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: initial;
+}
+
+.social-tabs__item--facebook {
+    background-image: url(./assets/images/facebook.svg);
+}
+
+.social-tabs__item--google {
+    background-image: url(./assets/images/google.svg);
+}
+
+.social-tabs__item--twitter {
+    background-image: url(./assets/images/twitter.svg);
+}
+
+.social-tabs__item--linkedin {
+    background-image: url(./assets/images/linkedin.svg);
+}
+
+.social-tabs__item:hover {
+    border: 1px solid #f06c64;
+}
+
+.social-tabs__item:active {
+    border: 1px solid #f06c64;
+    background-color: #f06c64;
+}
+
 
 
 
