@@ -1,0 +1,31 @@
+@import "fonts.css";
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', Arial, sans-serif;
+}
+   
+p,
+a,
+h2,
+h3,
+section,
+footer {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+/* contact-us----------------------------------------------------------------------*/
+
+.contact-us {
+    box-sizing: border-box;
+    padding-top: 61px;
+    padding-bottom: 62px;
+    background-color: #f06c64;
+    border-bottom: 6px solid #ea676b;
