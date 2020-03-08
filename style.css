@@ -79,6 +79,22 @@ textarea {
     margin: 0 10px;
 }
 
+.nav-header__item + .nav-header__item {
+    position: relative; 
+  }
+  
+.nav-header__item + .nav-header__item::before {
+    content: " ";
+    position: absolute;
+    left: -12.5px;
+    top: 50%;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: #494e62;
+    background-repeat: no-repeat;
+  }
+
 .nav-header__item:last-child {
     padding-right: 0;
     margin-right: 0;
@@ -353,7 +369,8 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    column-gap: 20px;
+    row-gap: 20px;
     overflow: hidden;
 }
 
