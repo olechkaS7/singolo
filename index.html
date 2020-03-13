@@ -17,8 +17,8 @@
       </h1>
 
       <nav>
-        <ul class="nav-header">
-          <li class="nav-header__item"><a class="header__link header__link--active" href="#!">Home</a></li>
+        <ul id="menu" class="nav-header">
+          <li class="nav-header__item"><a class="header__link header__link--active" href="#slider">Home</a></li>
           <li class="nav-header__item"><a class="header__link" href="#services">Services</a></li>
           <li class="nav-header__item"><a class="header__link" href="#portfolio">Portfolio</a></li>
           <li class="nav-header__item"><a class="header__link" href="#about">About</a></li>
@@ -29,7 +29,7 @@
     </div>
   </header>
 
-  <div class="slider">
+  <div id="slider" class="slider">
 
     <div class="wrapper-slider">
 
@@ -37,11 +37,15 @@
 
         <button class="button pixel"></button>
 
-          <ul class="slider-block">
+          <ul id="slider-block" class="slider-block">
             <li class="slider-block__item"><img class="slider-img" src="./assets/images/phone-vertical.png" alt="Vertical phone"></li>
             <li class="slider-block__item"><img class="slider-img" src="./assets/images/phone-horizontal.png" alt="Horizontal phone"></li>
           </ul>
-
+      
+      <div id="slider-block" class="slider-block hidden">
+        <img src="./assets/images/Slider.jpg" alt="Slider">
+      </div>
+      
         <button class="button button_right"></button>
 
       </div>
@@ -208,6 +212,9 @@
       </div>
     </div>
   </footer>
+
+
+  <script src="./script.js"></script>
 
 </body>
 

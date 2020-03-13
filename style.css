@@ -1,5 +1,9 @@
 @import "fonts.css";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -42,9 +46,12 @@ textarea {
 }
 
 .header {
+    position: sticky;
+    top: 0;
     padding: 32px 0 32px 0;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
+    z-index: 10;
 }
 
 .wrapper-header {
@@ -127,6 +134,7 @@ textarea {
     padding: 53px 0 55px 0;
     background-color:#f06c64;
     border-bottom: 6px solid  #ea676b;
+    scroll-margin-top: 95px;
 }
 
 .wrapper-slider {
@@ -157,6 +165,10 @@ textarea {
 
 .slider-block__item:last-child > img {
     transform: translateY(-1px);
+}
+
+.hidden {
+    display: none;
 }
 
 .button {
@@ -191,6 +203,7 @@ textarea {
     padding: 62px 0 30px 0;
     background-color: #f2f2f2;
     border-bottom: 6px solid #ffffff;
+    scroll-margin-top: 95px;
 }
 
 .our-services-wrapper {
@@ -302,6 +315,7 @@ textarea {
     padding-bottom: 67px;
     background-color: #2d303a;
     border-bottom: 6px solid #323746;
+    scroll-margin-top: 95px;
 }
 
 .wrapper-portfolio {
@@ -321,6 +335,7 @@ textarea {
 
 .portfolio-text {
     margin-top: 20px;
+    margin-left: 3px;
     font-size: 18px;
     line-height: 30px;
     text-align: justify;
@@ -380,12 +395,17 @@ textarea {
     width: 220px;
 }
 
+.portfolio-images__item--active {
+    outline: 5px solid #f06c64;
+}
+
 /* about----------------------------------------------------------------------*/
 
 .about {
     padding: 25px 0 67px 0;
     background-color: #f2f2f2;
     border-bottom: 6px solid #fff;
+    scroll-margin-top: 95px;
 }
 
 .wrapper-about{
@@ -506,6 +526,7 @@ textarea {
     padding-bottom: 21px;
     background-color: #f06c64;
     border-bottom: 6px solid #ea676b;
+    scroll-margin-top: 95px;
 }
 
 .contact-us-wrapper {
