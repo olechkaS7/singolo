@@ -91,8 +91,11 @@ function formSubmitHandler(event) {
     MODAL_SUBJECT.innerText = 'Без темы';
   }
 
-  // if ()
-  // DESCRIBE_INPUT
+  if (DESCRIBE_INPUT.value !== '') {
+    MODAL_DESCRIPTION.innerText = `Описание: ${DESCRIBE_INPUT.value}`;
+  } else {
+    MODAL_DESCRIPTION.innerText = 'Без описания';
+  }
 
   FORM_MODAL.classList.remove('modal--hidden');
   FORM_MODAL.classList.add('modal--visible');

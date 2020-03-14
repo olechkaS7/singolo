@@ -398,14 +398,14 @@ textarea {
 
 .tab:hover {
     border-color: #c5c5c5;
-    transition: border-color 0.3s linear;
+    transition: border-color 0.5s linear;
 }
 
 .tab:active,
 .tab--active {
     color: #dedede;
     border-color: #c5c5c5;
-    transition: color 0.3s linear;
+    transition: color 0.5s linear;
     outline: none;
 }
 
@@ -429,14 +429,15 @@ textarea {
     width: 220px;
 }
 
+.portfolio-images__item:hover {
+    outline: 1px solid white;
+    transition: all 0.2s linear;
+}
+
 .portfolio-images__item--active {
     outline: 5px solid #f06c64;
 }
 
-/*.portfolio-images__item:hover {
-    color: #f06c64;
-    border: 1px solid #f06c64;
-}*/
 
 /* about----------------------------------------------------------------------*/
 
@@ -553,10 +554,12 @@ textarea {
 
 .social-tabs__item:hover {
     border: 1px solid #f06c64;
+    transition: all 0.5s linear;
 }
 
 .social-tabs__item:active {
     background-color: #f06c64;
+    transition: all 0.5s linear;
 }
 /* contact-us----------------------------------------------------------------------*/
 
@@ -648,7 +651,7 @@ textarea {
 .input-submit:hover {
     background-color: #2d303a;
     color: #f0d8d9;
-    transition: all 0.2s linear;
+    transition: all 0.5s linear;
 }
 
 .information {
@@ -716,6 +719,7 @@ textarea {
 
 .information__link:hover {
     color: #2d303a;
+    transition: all 0.3s linear;
 }
 
 /*___________________footer______________________________________________________*/
@@ -747,6 +751,8 @@ textarea {
     line-height: 0;
 }
 
+/*_______modal_______*/
+
 .modal {
     position: fixed;
     top: 0;
@@ -765,4 +771,50 @@ textarea {
 
 .modal--visible {
     display: flex;
+}
+
+.modal-content {
+    padding: 100px;
+    border-radius: 15px;
+    background-color: #d6564f;
+}
+
+.modal-title {
+    font-size: 18px;
+    line-height: 1;
+    color: #f0d8d9;
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.modal-text {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #f0d8d9;
+    font-weight: 600;
+    font-family: 'Lato', Arial, sans-serif;
+    text-align: justify;
+}
+
+.modal-button { 
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #f48c8f;
+    font-weight: 400;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #d6564f;
+    cursor: pointer;
+}
+  
+.modal-button:hover {
+    background-color: #d6564f;
+    color: #f0d8d9;
+    transition: all 0.2s linear;
 }
