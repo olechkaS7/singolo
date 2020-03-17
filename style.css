@@ -635,6 +635,14 @@ textarea {
     color: #f48c8f;
 }
 
+.input::-webkit-input-placeholder {
+    color:  #f48c8f;
+    font-size: 12px;
+    line-height: 1;
+   /* font-family: inherit;
+    font-style: inherit;*/
+}
+
 .input-submit {
     box-sizing: border-box;
     font-size: 12px;
