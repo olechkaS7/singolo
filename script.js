@@ -9,12 +9,12 @@ const SUBJECT_INPUT = document.getElementById('subject-input');
 const DESCRIBE_INPUT = document.getElementById('describe-input');
 const MODAL_SUBJECT = document.getElementById('modal-subject');
 const MODAL_DESCRIPTION = document.getElementById('modal-description');
-
-
-/* -------- */
-
 const VERTICAL_SCREEN = document.getElementById('phone-vertical-screen');
 const HORIZONTAL_SCREEN = document.getElementById('phone-horizontal-screen');
+
+
+/* клик на экран айфона */
+
 
 function phoneScreenClickHandler(event) {
   if (event.target.classList.contains('phone-screen--visible')) {
@@ -33,7 +33,8 @@ HORIZONTAL_SCREEN.addEventListener('click', phoneScreenClickHandler);
 
 
 
-/*_________________menu__________________*/
+
+//____переключение меню_____________
 
 function menuClickHandler(event) {
     if (event.target.tagName !== 'A') return;
@@ -44,6 +45,27 @@ function menuClickHandler(event) {
 
     event.target.classList.add('header__link--active');
 }
+
+
+/*document.addEventListener('scroll', onScroll);
+
+  function onScroll(event) {
+    const curPos = window.scrollY;
+    const navs = document.querySelectorAll('body > div');
+    const links = document.querySelectorAll('menu a');
+
+    navs.forEach((el) => {
+      if (el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos) {
+        links.forEach(('header__link') => {
+          links.classList.remove('header__link--active');
+          if (el.getAttribute('li > a') === links.getAttribute('href'). substring(1) {
+            a.classList.add('header__link--active')
+          }
+        });
+      }
+    }
+  }*/
+
 
 MENU.addEventListener('click', menuClickHandler);
 
@@ -107,7 +129,3 @@ MODAL_BUTTON.addEventListener('click', (event) => {
 });
 
 FORM.addEventListener('submit', formSubmitHandler);
-
-// console.log(SLIDER);
-// console.dir(SLIDER);
-

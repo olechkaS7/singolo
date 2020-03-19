@@ -9,6 +9,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 div,
@@ -148,6 +149,19 @@ textarea {
     margin: 0 auto;
 }
 
+.slider-1 {
+    background-color: #f06c64;
+    border-color: #ea676b;
+    transition: background-color 0.5s linear, border-color 0.5s linear;
+}
+
+.slider-2 {
+    background-color: #648BF0;
+    border-color: #888BF0;
+    transition: background-color 0.5s linear, border-color 0.5s linear;
+  }
+
+
 .container-slider {
     display: flex;
     justify-content: space-between;
@@ -155,14 +169,20 @@ textarea {
 }
 
 .slider-block {
-    margin: 0 auto;
+    position: relative;
+    width: 100%;
     display: flex;
-    align-items: center;    
+    margin: 0 auto;
+    align-items: center;  
+    justify-content: flex-start;
+    overflow: hidden;
+    user-select: none; 
 }
 
+
 .slider-block__item {
-    padding: 0 35px 0 37px;
     position: relative;
+    padding: 0 35px 0 37px;
 }
 
 .slider-block__item:first-child > img {
@@ -171,6 +191,29 @@ textarea {
 
 .slider-block__item:last-child > img {
     transform: translateY(-1px);
+}
+
+.phone-container {
+    position: relative;
+    padding: 0 35px 0 37px;
+}
+
+.phone-container > .phone__base {
+    position: absolute;
+    left: 130px;
+    top: 0;
+    border-radius: 29px;
+    z-index: 5;
+}
+  
+.phone-container > .phone__screen {
+    position: absolute;
+    top: 69px;
+    left: 145px;
+    width: 201px;
+    height: 354px;
+    object-position: initial;
+    z-index: 10;
 }
 
 .phone-vertical-screen {
@@ -204,11 +247,13 @@ textarea {
 }
 
 .button {
+    position: absolute;
     margin: 0px;
     padding: 0px;
     width: 16px;
     height: 27px;
     border: none;
+    display: block;
     background-color: inherit;
     background-image: url(./assets/images/btn-slider-left.png);
     background-repeat: no-repeat;
@@ -228,7 +273,41 @@ textarea {
 .button:hover {
     filter: brightness(10);
 }
-
+.to-left {
+    animation-name: left;
+  }
+  
+  .from-right {
+    animation-name: right;
+  }
+  
+  .to-right {
+    animation-name: right;
+    animation-direction: reverse;
+  }
+  
+  .from-left {
+    animation-name: left;
+    animation-direction: reverse;
+  }
+  
+  @keyframes left {
+    from {
+      left: 0;
+    }
+    to {
+      left: -100%;
+    }
+  }
+  
+  @keyframes right {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0;
+    }
+  }
 /* our services----------------------------------------------------------------------*/
 
 .our-services {
@@ -635,7 +714,7 @@ textarea {
     color: #f48c8f;
 }
 
-.input::-webkit-input-placeholder {
+.input::-webkit-input-placeholders {
     color:  #f48c8f;
     font-size: 12px;
     line-height: 1;
@@ -826,3 +905,4 @@ textarea {
     color: #f0d8d9;
     transition: all 0.2s linear;
 }
+ 

@@ -18,43 +18,52 @@
 
       <nav>
         <ul id="menu" class="nav-header">
-          <li class="nav-header__item"><a class="header__link header__link--active" href="#slider">Home</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#services">Services</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#about">About</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#contact">Contact</a></li>
+          <li class="nav-header__item"><a id="header__link" class="header__link header__link--active" href="#slider">Home</a></li>
+          <li class="nav-header__item"><a id="services__link" class="header__link" href="#services">Services</a></li>
+          <li class="nav-header__item"><a id="portfolio__link" class="header__link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-header__item"><a id="about__link" class="header__link" href="#about">About</a></li>
+          <li class="nav-header__item"><a id="contact__link" class="header__link" href="#contact">Contact</a></li>
         </ul>
       </nav>
 
     </div>
   </header>
 
-  <div id="slider" class="slider">
+  <section id="slider" class="slider">
 
     <div class="wrapper-slider">
 
       <div class="container-slider">
 
-        <button class="button pixel"></button>
-
-          <ul id="slider-block" class="slider-block">
-            <li class="slider-block__item">
-              <img class="slider-img" src="./assets/images/phone-vertical.png" alt="Vertical phone">
+        <button id="slider__left-button" class="button pixel"></button>
+        <button id="slider__right-button" class="button button_right"></button>
+          
+          <ul id="slider" class="slider-block">
+            <li class="slider-block__item slider-1">
+              <img class="slider-img" src="./assets/images/phone-vertical.png" alt="Vertical phone" id="vertical-phone">
               <div id="phone-vertical-screen" class="phone-vertical-screen phone-screen--hidden"></div>
             </li>
             <li class="slider-block__item">
-              <img class="slider-img" src="./assets/images/phone-horizontal.png" alt="Horizontal phone">
+              <img class="slider-img" src="./assets/images/phone-horizontal.png" alt="Horizontal phone" id="horizontal-phone">
               <div id="phone-horizontal-screen" class="phone-horizontal-screen phone-screen--hidden"></div>
+            </li>
+
+            <li id="slider-2" class="slider-block__item slider-2">
+              <div class="phone-container">
+                <img class="phone_bg" src="./assets/images/iphones-bg.png" alt="Vertical phone">
+                <img class="phone_base" src="./assets/images/iphone-base.png" alt="Vertical phone">
+                <img class="phone_screen" src="./assets/images/iphones-vertical-screen.png" alt="Vertical phone">
+              </div>
+              <div id="phone-vertical-screen" class="phone-vertical-screen phone-screen--hidden"></div>
             </li>
           </ul>
       
-        <button class="button button_right"></button>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
   <section id="services" class="our-services">
     <div class="our-services-wrapper">
@@ -215,15 +224,16 @@
     </div>
   </footer>
 
-  <div id="form-modal" class="modal modal--hidden">
+  <section class="form-modal">
+    <div id="form-modal" class="modal modal--hidden">
     <div class="modal-content">
       <h3 class="modal-title">Письмо отправлено</h3>
       <p id="modal-subject" class="modal-subject modal-text">Без темы</p>
       <p id="modal-description" class="modal-description modal-text">Без описания</p>
       <button id="modal-button" class="modal-button">Ok</button>
     </div>
-  </div>
-
+    </div>
+  </section>
 
   <script src="./script.js"></script>
 
