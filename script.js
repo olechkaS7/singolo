@@ -9,29 +9,29 @@ const SUBJECT_INPUT = document.getElementById('subject-input');
 const DESCRIBE_INPUT = document.getElementById('describe-input');
 const MODAL_SUBJECT = document.getElementById('modal-subject');
 const MODAL_DESCRIPTION = document.getElementById('modal-description');
-const VERTICAL_SCREEN = document.getElementById('phone-vertical-screen');
-const HORIZONTAL_SCREEN = document.getElementById('phone-horizontal-screen');
 
 
 /* клик на экран айфона */
 
+document.getElementById('btn-phone-vertical-screen')
+  .addEventListener('click', phoneButtonClickHandler);
+document.getElementById('btn-phone-horizontal-screen')
+  .addEventListener('click', phoneButtonClickHandler);
+document.getElementById('btn-phones-vertical-screen')
+  .addEventListener('click', phoneButtonClickHandler);
 
-function phoneScreenClickHandler(event) {
-  if (event.target.classList.contains('phone-screen--visible')) {
-    event.target.classList.remove('phone-screen--visible');
-    event.target.classList.add('phone-screen--hidden');
-  } else if (event.target.classList.contains('phone-screen--hidden')) {
-    event.target.classList.remove('phone-screen--hidden');
-    event.target.classList.add('phone-screen--visible');
+function phoneButtonClickHandler(event) {
+  const screenId = event.target.id.substring(4);
+  const screen = document.getElementById(screenId);
+
+  if (screen.classList.contains('phone-screen--visible')) {
+    screen.classList.remove('phone-screen--visible');
+    screen.classList.add('phone-screen--hidden');
+  } else if (screen.classList.contains('phone-screen--hidden')) {
+    screen.classList.remove('phone-screen--hidden');
+    screen.classList.add('phone-screen--visible');
   }
 }
-
-VERTICAL_SCREEN.addEventListener('click', phoneScreenClickHandler);
-HORIZONTAL_SCREEN.addEventListener('click', phoneScreenClickHandler);
-
-
-
-
 
 
 //____переключение меню_____________
@@ -69,6 +69,66 @@ function onScroll(event) {
   });
 }
 
+/*___________________slider__________*/
+
+const items = document.querySelectorAll('.slider-block__item');
+let currentItem = 0;
+let isEnabled = true;
+
+function changeCurrentItem(n) {
+	currentItem = (n + items.length) % items.length;
+}
+
+function hideItem(direction) {
+	isEnabled = false;
+	items[currentItem].classList.add(direction);
+	items[currentItem].addEventListener('animationend', function() {
+		this.classList.remove('active', direction);
+	});
+}
+
+function showItem(direction) {
+  items[currentItem].classList.add('next', direction);
+  changeBackground(items[currentItem]);
+
+	items[currentItem].addEventListener('animationend', function() {
+		this.classList.remove('next', direction);
+		this.classList.add('active');
+		isEnabled = true;
+	});
+}
+
+function changeBackground(slide) {
+  const backgroundClassName = slide.id;
+  const SLIDER_SECTION = document.querySelector('#slider');
+    SLIDER_SECTION.className = 'slider';
+    SLIDER_SECTION.classList.add(backgroundClassName);
+}
+
+function nextItem(n) {
+	hideItem('to-left');
+	changeCurrentItem(n + 1);
+	showItem('from-right');
+}
+
+function previousItem(n) {
+	hideItem('to-right');
+	changeCurrentItem(n - 1);
+	showItem('from-left');
+}
+
+document.querySelector('#slider__left-button').addEventListener('click', function() {
+	if (isEnabled) {
+		previousItem(currentItem);
+	}
+});
+
+document.querySelector('#slider__right-button').addEventListener('click', function() {
+	if (isEnabled) {
+		nextItem(currentItem);
+	}
+});
+
 /*___________________portfolio-images__________*/
 
 function imagesClickHandler(event) {
@@ -99,7 +159,7 @@ function tabClickHandler(event) {
 
 TAB.addEventListener('click', tabClickHandler);
 PORTFOLIO_IMAGES.addEventListener('click', imagesClickHandler);
-
+ 
 /*________________form________*/
 
 function formSubmitHandler(event) {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css"/>
     <title>Singolo</title>
 </head>
+
 <body>
   <header class="header">
     <div class="wrapper-header">
@@ -37,27 +38,29 @@
 
         <button id="slider__left-button" class="button pixel"></button>
         <button id="slider__right-button" class="button button_right"></button>
-          
-          <ul id="slider" class="slider-block">
-            <li class="slider-block__item slider-1 active">
+        
+        <ul id="slider" class="slider-block">
+          <li id="slide-1" class="slider-block__item active">
+            <div class="phone-container">
               <img class="slider-img" src="./assets/images/phone-vertical.png" alt="Vertical phone" id="vertical-phone">
-              <div id="phone-vertical-screen" class="phone-vertical-screen phone-screen--hidden"></div>
-            </li>
-            <li class="slider-block__item">
+              <div id="phone-vertical-screen" class="phone-screen phone-vertical-screen phone-screen--hidden"></div>
+              <div id="btn-phone-vertical-screen" class="btn-phone btn-phone-vertical-screen"></div>
+            </div>
+            <div class="phone-container">
               <img class="slider-img" src="./assets/images/phone-horizontal.png" alt="Horizontal phone" id="horizontal-phone">
-              <div id="phone-horizontal-screen" class="phone-horizontal-screen phone-screen--hidden"></div>
-            </li>
+              <div id="phone-horizontal-screen" class="phone-screen phone-horizontal-screen phone-screen--hidden"></div>
+              <div id="btn-phone-horizontal-screen" class="btn-phone btn-phone-horizontal-screen"></div>
+            </div>
+          </li>
 
-            <li id="slider-2" class="slider-block__item slider-2">
-              <div class="phone-container">
-                <img class="phone_bg" src="./assets/images/iphones-bg.png" alt="Vertical phone">
-                <img class="phone_base" src="./assets/images/iphone-base.png" alt="Vertical phone">
-                <img class="phone_screen" src="./assets/images/iphones-vertical-screen.png" alt="Vertical phone">
-              </div>
-              <div id="phone-vertical-screen" class="phone-vertical-screen phone-screen--hidden"></div>
-            </li>
-          </ul>
-      
+          <li id="slide-2" class="slider-block__item">
+            <div class="phone-container">
+              <img class="phone_bg" src="./assets/images/iphones-slider2.png" alt="Vertical phones">
+              <div id="phones-vertical-screen" class="phone-screen phones-vertical-screen phone-screen--hidden"></div>
+              <div id="btn-phones-vertical-screen" class="btn-phone btn-phones-vertical-screen"></div>
+            </div>
+          </li>
+        </ul>
 
       </div>
 
@@ -194,7 +197,7 @@
         <form id="form" class="form" method="POST">
           <input type="text" required class="input name-input" placeholder="Name (Required)" maxlength="80">
           <input type="email" required class="input email-input" placeholder="Email (Required)" maxlength="80">
-          <input id="subject-input" type="text" class="input subject-input" placeholder="Subject" maxlength="80">
+          <input autocomplete="off" id="subject-input" type="text" class="input subject-input" placeholder="Subject" maxlength="80">
           <textarea id="describe-input" class="input input-textarea" placeholder="Describe your project in detail..." maxlength="2000"></textarea>
           <input type="submit" class="input-submit" value="Submit">
         </form>
