@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css"/>
     <title>Singolo</title>
 </head>
+
 <body>
   <header class="header">
     <div class="wrapper-header">
@@ -17,38 +18,55 @@
       </h1>
 
       <nav>
-        <ul class="nav-header">
-          <li class="nav-header__item"><a class="header__link header__link--active" href="#!">Home</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#services">Services</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#portfolio">Portfolio</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#about">About</a></li>
-          <li class="nav-header__item"><a class="header__link" href="#contact">Contact</a></li>
+        <ul id="menu" class="nav-header">
+          <li class="nav-header__item"><a id="header__link" class="header__link header__link--active" href="#slider">Home</a></li>
+          <li class="nav-header__item"><a id="services__link" class="header__link" href="#services">Services</a></li>
+          <li class="nav-header__item"><a id="portfolio__link" class="header__link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-header__item"><a id="about__link" class="header__link" href="#about">About</a></li>
+          <li class="nav-header__item"><a id="contact__link" class="header__link" href="#contact">Contact</a></li>
         </ul>
       </nav>
 
     </div>
   </header>
 
-  <div class="slider">
+  <section id="slider" class="slider">
 
     <div class="wrapper-slider">
 
       <div class="container-slider">
 
-        <button class="button pixel"></button>
+        <button id="slider__left-button" class="button pixel"></button>
+        <button id="slider__right-button" class="button button_right"></button>
+        
+        <ul id="slider" class="slider-block">
+          <li id="slide-1" class="slider-block__item active">
+            <div class="phone-container">
+              <img class="slider-img" src="./assets/images/phone-vertical.png" alt="Vertical phone" id="vertical-phone">
+              <div id="phone-vertical-screen" class="phone-screen phone-vertical-screen phone-screen--hidden"></div>
+              <div id="btn-phone-vertical-screen" class="btn-phone btn-phone-vertical-screen"></div>
+            </div>
+            <div class="phone-container">
+              <img class="slider-img" src="./assets/images/phone-horizontal.png" alt="Horizontal phone" id="horizontal-phone">
+              <div id="phone-horizontal-screen" class="phone-screen phone-horizontal-screen phone-screen--hidden"></div>
+              <div id="btn-phone-horizontal-screen" class="btn-phone btn-phone-horizontal-screen"></div>
+            </div>
+          </li>
 
-          <ul class="slider-block">
-            <li class="slider-block__item"><img class="slider-img" src="./assets/images/phone-vertical.png" alt="Vertical phone"></li>
-            <li class="slider-block__item"><img class="slider-img" src="./assets/images/phone-horizontal.png" alt="Horizontal phone"></li>
-          </ul>
-
-        <button class="button button_right"></button>
+          <li id="slide-2" class="slider-block__item">
+            <div class="phone-container">
+              <img class="phone_bg" src="./assets/images/iphones-slider2.png" alt="Vertical phones">
+              <div id="phones-vertical-screen" class="phone-screen phones-vertical-screen phone-screen--hidden"></div>
+              <div id="btn-phones-vertical-screen" class="btn-phone btn-phones-vertical-screen"></div>
+            </div>
+          </li>
+        </ul>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
   <section id="services" class="our-services">
     <div class="our-services-wrapper">
@@ -98,14 +116,14 @@
     <div class="wrapper-portfolio">
       <h2 class="portfolio-title">Portfolio</h2>
       <p class="portfolio-text">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-      <div class="portfolio__buttons">
+      <div id="tab-list" class="portfolio__buttons">
         <button class="tab tab--active">All</button>
         <button class="tab">Web design</button>
         <button class="tab">Graphic design</button>
         <button class="tab">Artwork</button>
       </div>
         
-      <div class="portfolio-images">
+      <div id="portfolio-images" class="portfolio-images">
         <div class="portfolio-images__item"><img src="./assets/images/image-01.jpg" alt="Image 01"></div>
         <div class="portfolio-images__item"><img src="./assets/images/image-02.jpg" alt="Image 02"></div>
         <div class="portfolio-images__item"><img src="./assets/images/image-03.jpg" alt="Image 03"></div>
@@ -176,11 +194,11 @@
   
       <div class="contacts-form">
 
-        <form class="form" method="POST">
-          <input type="text" required class="input name-input" placeholder="Name (Required)">
-          <input type="email" required class="input email-input" placeholder="Email (Required)">
-          <input type="text" class="input subject-input" placeholder="Subject">
-          <textarea class="input input-textarea" placeholder="Describe your project in detail..."></textarea>
+        <form id="form" class="form" method="POST">
+          <input type="text" required class="input name-input" placeholder="Name (Required)" maxlength="80">
+          <input type="email" required class="input email-input" placeholder="Email (Required)" maxlength="80">
+          <input autocomplete="off" id="subject-input" type="text" class="input subject-input" placeholder="Subject" maxlength="80">
+          <textarea id="describe-input" class="input input-textarea" placeholder="Describe your project in detail..." maxlength="2000"></textarea>
           <input type="submit" class="input-submit" value="Submit">
         </form>
   
@@ -208,6 +226,17 @@
       </div>
     </div>
   </footer>
+
+  <div id="form-modal" class="modal modal--hidden">
+    <div class="modal-content">
+      <h3 class="modal-title">Письмо отправлено</h3>
+      <p id="modal-subject" class="modal-subject modal-text">Без темы</p>
+      <p id="modal-description" class="modal-description modal-text">Без описания</p>
+      <button id="modal-button" class="modal-button">Ok</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
 
 </body>
 
