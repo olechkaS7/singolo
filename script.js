@@ -36,39 +36,38 @@ HORIZONTAL_SCREEN.addEventListener('click', phoneScreenClickHandler);
 
 //____переключение меню_____________
 
-function menuClickHandler(event) {
-    if (event.target.tagName !== 'A') return;
+// function menuClickHandler(event) {
+//     if (event.target.tagName !== 'A') return;
 
-    MENU.querySelectorAll('li > a').forEach(element => {
-        element.classList.remove('header__link--active');
-    });
+//     MENU.querySelectorAll('li > a').forEach(element => {
+//         element.classList.remove('header__link--active');
+//     });
 
-    event.target.classList.add('header__link--active');
-}
+//     event.target.classList.add('header__link--active');
+// }
 
+// MENU.addEventListener('click', menuClickHandler);
 
-/*document.addEventListener('scroll', onScroll);
+document.addEventListener('scroll', onScroll);
 
-  function onScroll(event) {
-    const curPos = window.scrollY;
-    const navs = document.querySelectorAll('body > div');
-    const links = document.querySelectorAll('menu a');
+function onScroll(event) {
+  const curPos = window.scrollY;
+  const sections = document.querySelectorAll('body > section');
+  const links = document.querySelectorAll('#menu a');
+  const headerHeight = document.querySelector('header').offsetHeight;
 
-    navs.forEach((el) => {
-      if (el.offsetTop <= curPos && (el.offsetTop + el.offsetHeight) > curPos) {
-        links.forEach(('header__link') => {
-          links.classList.remove('header__link--active');
-          if (el.getAttribute('li > a') === links.getAttribute('href'). substring(1) {
-            a.classList.add('header__link--active')
-          }
-        });
-      }
+  sections.forEach(section => {
+    if (((section.offsetTop - headerHeight) <= curPos)
+      && ((section.offsetTop + section.offsetHeight - headerHeight) > curPos)) {
+      links.forEach((link) => {
+        link.classList.remove('header__link--active');
+        if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
+          link.classList.add('header__link--active');
+        }
+      });
     }
-  }*/
-
-
-MENU.addEventListener('click', menuClickHandler);
-
+  });
+}
 
 /*___________________portfolio-images__________*/
 
@@ -120,12 +119,13 @@ function formSubmitHandler(event) {
   }
 
   FORM_MODAL.classList.remove('modal--hidden');
-  FORM_MODAL.classList.add('modal--visible');
+  FORM_MODAL.classList.add('modal--visible');  
 }
 
 MODAL_BUTTON.addEventListener('click', (event) => {
   FORM_MODAL.classList.remove('modal--visible');
   FORM_MODAL.classList.add('modal--hidden');
+  document.querySelector('#form').reset();
 });
 
 FORM.addEventListener('submit', formSubmitHandler);

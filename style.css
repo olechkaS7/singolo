@@ -159,13 +159,45 @@ textarea {
     background-color: #648BF0;
     border-color: #888BF0;
     transition: background-color 0.5s linear, border-color 0.5s linear;
-  }
+}
 
 
 .container-slider {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+
+.button {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 16px;
+    height: 27px;
+    border: none;
+    display: block;
+    background-color: inherit;
+    background-image: url(./assets/images/btn-slider-left.png);
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: center;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.button.pixel {
+    transform: translate(2px, -1px);
+}
+
+.button_right {
+    transform: rotate(180deg);
+}
+
+.button:hover {
+    filter: brightness(10);
 }
 
 .slider-block {
@@ -179,7 +211,6 @@ textarea {
     user-select: none; 
 }
 
-
 .slider-block__item {
     position: relative;
     padding: 0 35px 0 37px;
@@ -191,6 +222,54 @@ textarea {
 
 .slider-block__item:last-child > img {
     transform: translateY(-1px);
+}
+
+.active,
+.next {
+    position: relative;
+    display: flex;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+    animation-name: left;
+}
+  
+.from-right {
+    animation-name: right;
+}
+  
+.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+  
+.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+  
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+      left: -100%;
+    }
+}
+  
+@keyframes right {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 0;
+    }
 }
 
 .phone-container {
@@ -246,68 +325,7 @@ textarea {
     transition: background-color 0.5s linear;
 }
 
-.button {
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    width: 16px;
-    height: 27px;
-    border: none;
-    display: block;
-    background-color: inherit;
-    background-image: url(./assets/images/btn-slider-left.png);
-    background-repeat: no-repeat;
-    background-size: initial;
-    background-position: center;
-    cursor: pointer;
-}
 
-.button.pixel {
-    transform: translate(2px, -1px);
-}
-
-.button_right {
-    transform: rotate(180deg);
-}
-
-.button:hover {
-    filter: brightness(10);
-}
-.to-left {
-    animation-name: left;
-  }
-  
-  .from-right {
-    animation-name: right;
-  }
-  
-  .to-right {
-    animation-name: right;
-    animation-direction: reverse;
-  }
-  
-  .from-left {
-    animation-name: left;
-    animation-direction: reverse;
-  }
-  
-  @keyframes left {
-    from {
-      left: 0;
-    }
-    to {
-      left: -100%;
-    }
-  }
-  
-  @keyframes right {
-    from {
-      left: 100%;
-    }
-    to {
-      left: 0;
-    }
-  }
 /* our services----------------------------------------------------------------------*/
 
 .our-services {
@@ -861,14 +879,15 @@ textarea {
 }
 
 .modal-content {
-    padding: 100px;
+    padding: 60px;
+    max-width: 50vw;
     border-radius: 15px;
     background-color: #d6564f;
 }
 
 .modal-title {
     font-size: 18px;
-    line-height: 1;
+    line-height: 1.3;
     color: #f0d8d9;
     font-family: 'Lato', Arial, sans-serif;
     font-weight: 900;
@@ -878,12 +897,18 @@ textarea {
 .modal-text {
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 14px;
+    line-height: 1.3;
     color: #f0d8d9;
-    font-weight: 600;
+    font-weight: 700;
     font-family: 'Lato', Arial, sans-serif;
     text-align: justify;
+    word-wrap: break-word;
+}
+
+.modal-description {
+    max-height: 30vh;
+    overflow-y: auto;
 }
 
 .modal-button { 

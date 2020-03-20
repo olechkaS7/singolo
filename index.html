@@ -39,7 +39,7 @@
         <button id="slider__right-button" class="button button_right"></button>
           
           <ul id="slider" class="slider-block">
-            <li class="slider-block__item slider-1">
+            <li class="slider-block__item slider-1 active">
               <img class="slider-img" src="./assets/images/phone-vertical.png" alt="Vertical phone" id="vertical-phone">
               <div id="phone-vertical-screen" class="phone-vertical-screen phone-screen--hidden"></div>
             </li>
@@ -192,10 +192,10 @@
       <div class="contacts-form">
 
         <form id="form" class="form" method="POST">
-          <input type="text" required class="input name-input" placeholder="Name (Required)">
-          <input type="email" required class="input email-input" placeholder="Email (Required)">
-          <input id="subject-input" type="text" class="input subject-input" placeholder="Subject">
-          <textarea id="describe-input" class="input input-textarea" placeholder="Describe your project in detail..."></textarea>
+          <input type="text" required class="input name-input" placeholder="Name (Required)" maxlength="80">
+          <input type="email" required class="input email-input" placeholder="Email (Required)" maxlength="80">
+          <input id="subject-input" type="text" class="input subject-input" placeholder="Subject" maxlength="80">
+          <textarea id="describe-input" class="input input-textarea" placeholder="Describe your project in detail..." maxlength="2000"></textarea>
           <input type="submit" class="input-submit" value="Submit">
         </form>
   
@@ -224,16 +224,14 @@
     </div>
   </footer>
 
-  <section class="form-modal">
-    <div id="form-modal" class="modal modal--hidden">
+  <div id="form-modal" class="modal modal--hidden">
     <div class="modal-content">
       <h3 class="modal-title">Письмо отправлено</h3>
       <p id="modal-subject" class="modal-subject modal-text">Без темы</p>
       <p id="modal-description" class="modal-description modal-text">Без описания</p>
       <button id="modal-button" class="modal-button">Ok</button>
     </div>
-    </div>
-  </section>
+  </div>
 
   <script src="./script.js"></script>
 
