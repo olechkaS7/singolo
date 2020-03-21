@@ -121,17 +121,17 @@ textarea {
 .header__link:active,
 .header__link--active {
     color: #f06c64;
-    transition: color 0.3s linear;
+    transition: color 0.1s linear;
     outline: none;
 }
 
 .header__link:hover {
     color: #f06c64;
-    transition: color 0.3s linear;
+    transition: color 0.1s linear;
 }
 
 .header__link:not(:hover) {
-    transition: color 0.2s linear;
+    transition: color 0.1s linear;
 }
 
 /* slider ------------------------------------------------------------------------*/
@@ -946,3 +946,11 @@ textarea {
     transition: all 0.2s linear;
 }
  
+
+/*_______768___________________________*/
+
+@media (max-width: 768px) {
+
+
+ 
+}

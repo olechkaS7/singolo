@@ -34,19 +34,19 @@ function phoneButtonClickHandler(event) {
 }
 
 
-//____переключение меню_____________
+// ____переключение меню_____________
 
-// function menuClickHandler(event) {
-//     if (event.target.tagName !== 'A') return;
+function menuClickHandler(event) {
+    if (event.target.tagName !== 'A') return;
 
-//     MENU.querySelectorAll('li > a').forEach(element => {
-//         element.classList.remove('header__link--active');
-//     });
+    MENU.querySelectorAll('li > a').forEach(element => {
+        element.classList.remove('header__link--active');
+    });
 
-//     event.target.classList.add('header__link--active');
-// }
+    event.target.classList.add('header__link--active');
+}
 
-// MENU.addEventListener('click', menuClickHandler);
+MENU.addEventListener('click', menuClickHandler);
 
 document.addEventListener('scroll', onScroll);
 
@@ -61,7 +61,7 @@ function onScroll(event) {
       && ((section.offsetTop + section.offsetHeight - headerHeight) > curPos)) {
       links.forEach((link) => {
         link.classList.remove('header__link--active');
-        if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
+         if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
           link.classList.add('header__link--active');
         }
       });
