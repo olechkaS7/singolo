@@ -42,7 +42,6 @@ function menuClickHandler(event) {
     MENU.querySelectorAll('li > a').forEach(element => {
         element.classList.remove('header__link--active');
     });
-
     event.target.classList.add('header__link--active');
 }
 
@@ -57,8 +56,8 @@ function onScroll(event) {
   const headerHeight = document.querySelector('header').offsetHeight;
 
   sections.forEach(section => {
-    if (((section.offsetTop - headerHeight) <= curPos)
-      && ((section.offsetTop + section.offsetHeight - headerHeight) > curPos)) {
+    if (((section.offsetTop - headerHeight - 200) <= curPos)
+      && ((section.offsetTop + section.offsetHeight - headerHeight - 200) > curPos)) {
       links.forEach((link) => {
         link.classList.remove('header__link--active');
          if (section.getAttribute('id') === link.getAttribute('href').substring(1)) {
