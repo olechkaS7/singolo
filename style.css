@@ -64,6 +64,37 @@ textarea {
     align-items: flex-end;
 }
 
+.hamburger-button {
+    display: none;
+    position: absolute;
+    top: 26px;
+    left: 20px;
+    width: 25px;
+    height: 20px;
+    border: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: inherit;
+    z-index: 120;
+    transition: all 0.4s linear;
+}
+
+.hamburger-button--active {
+    transform: rotate(90deg);
+}
+
+.hamburger-button:focus {
+    outline: none;
+}
+
+.hamburger-line {
+    display: inline-block;
+    width: 25px;
+    height: 2.4px;
+    border-radius: 1.2px;
+    background-color: #fff;
+}
+
 .header-logo {
     font-size: 25px;
     line-height: 25px;
@@ -75,6 +106,59 @@ textarea {
 
 .header-logo > span {
     color: #f06c64;
+}
+
+.header-logo--aside {
+    position: relative;
+    z-index: 120;
+    left: calc(-50vw + 71px + 45.665px);
+}
+
+.header-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+.header-overlay--visible {
+    display: block;
+}
+
+.aside-menu--active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 278px;
+    height: 100vh;
+    padding: 71px 10px 20px 71px;
+    background: #2D303A;
+    box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+    z-index: 110;
+}
+
+.nav-header--aside {
+    flex-direction: column;
+    margin-top: 161px;
+}
+
+.nav-header--aside .nav-header__item {
+    padding: 0;
+    margin: 0 0 29.5px 0;
+} 
+
+.nav-header--aside .nav-header__item::before {
+    display: none;
+} 
+
+.nav-header--aside .header__link {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.035em;
 }
 
 .nav-header {
@@ -178,8 +262,8 @@ textarea {
     z-index: 50;
 }
 
-.button.pixel {
-    transform: translate(2px, -1px);
+.button_left {
+    left: 0;
 }
 
 .button_right {
@@ -526,8 +610,11 @@ textarea {
     grid-template-rows: 1fr 1fr 1fr;
     column-gap: 20px;
     row-gap: 20px;
-    cursor: pointer;
     user-select: none;
+}
+
+.portfolio-images:focus {
+    outline: none;
 }
 
 .portfolio-images__item {
@@ -716,7 +803,7 @@ textarea {
     display: block;
     width: 100%;
     padding: 8px 15px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     border-radius: 5px;
     background-color: #d6564f;
     font-family: inherit;
@@ -930,13 +1017,21 @@ textarea {
 @media (max-width: 1019px) {
 
     .slider {
-        padding: 41px 0 42.53px 0;
+        padding: 41px 0 42px 0;
         height: calc(600px - (1020px - 100vw) * (451.76 / 768));
         border-bottom-width: 4.52px;
     }
 
     .container-slider {
         height: auto;
+    }
+
+    .button_left {
+        left: -10px;
+    }
+    
+    .button_right {
+        right: -10px;
     }
 
     .slider-block {
@@ -1010,13 +1105,19 @@ textarea {
         left: calc(137 / 486.766 * 100%);
         top: calc(65 / 483 * 100%);
     }
-        
+
+    /* .contact-us {
+        padding-top: 50px;
+        padding-bottom: 21px;
+    }
+    */
+
     .services-block__item {
-        width: 43.459%;
+        width: calc((100% - 20px) / 2);
+        padding-right: 34px;
     }
         
     .portfolio-images {
-        max-height: none;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
     }
@@ -1042,9 +1143,29 @@ textarea {
         width: calc((100% - 29px) * 0.3191);
     }
 
+    .modal-content {
+        padding: 40px;
+        max-width: 70vw;
+    }
+
+}
+
+@media (max-width: 767px) and (orientation: landscape) {
+    
+    .nav-header--aside {
+        margin-top: 20px;
+    }
+
+    .nav-header--aside .nav-header__item {
+        margin-bottom: 16px;
+    }
 }
 
 @media (max-width: 767px) {
+
+    .hamburger-button {
+        display: flex;
+    }
 
     .header {
         padding: 26px 0 19px 0;
@@ -1075,6 +1196,14 @@ textarea {
 
     .wrapper-slider {
         padding: 0 30px;
+    }
+
+    .button_left {
+        left: -20px;
+    }
+    
+    .button_right {
+        right: -20px;
     }
 
     .phone-container + .phone-container {
@@ -1182,6 +1311,11 @@ textarea {
     .footer-text {
         display: none;
     }
+
+    .modal-content {
+        padding: 30px;
+        max-width: 80vw;
+    }
 }
 
 @media (max-width: 374px) {
@@ -1194,6 +1328,12 @@ textarea {
     .phone-container + .phone-container {
         margin-left: 10px;
     }
+
+    .modal-content {
+        padding: 10px;
+        max-width: 90vw;
+    }
+
 }
 
 @media (pointer: fine) {

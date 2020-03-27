@@ -1,4 +1,5 @@
 const MENU = document.getElementById('menu');
+const HAMBURGER = document.getElementById('hamburger-button');
 const SLIDER = document.getElementById('slider');
 const TAB = document.getElementById('tab-list');
 const PORTFOLIO_IMAGES = document.getElementById('portfolio-images');
@@ -36,13 +37,39 @@ function phoneButtonClickHandler(event) {
 
 // ____переключение меню_____________
 
-function menuClickHandler(event) {
-    if (event.target.tagName !== 'A') return;
+HAMBURGER.addEventListener('click', hamburgerClickHandler);
+const HEADER_OVERLAY = document.getElementById('header-overlay');
+const LOGO = document.getElementById('header-logo');
+const ASIDE_MENU = document.getElementById('aside-menu');
 
-    MENU.querySelectorAll('li > a').forEach(element => {
-        element.classList.remove('header__link--active');
-    });
-    event.target.classList.add('header__link--active');
+function hamburgerClickHandler() {
+  if (HAMBURGER.classList.contains('hamburger-button--active')) {
+    HAMBURGER.classList.remove('hamburger-button--active');
+    HEADER_OVERLAY.classList.remove('header-overlay--visible');
+    LOGO.classList.remove('header-logo--aside');
+    ASIDE_MENU.className = 'aside-menu';
+    MENU.className = 'nav-header';
+  } else {
+    HAMBURGER.classList.add('hamburger-button--active');
+    HEADER_OVERLAY.classList.add('header-overlay--visible');
+    LOGO.classList.add('header-logo--aside');
+    ASIDE_MENU.className = 'aside-menu--active';
+    MENU.className = 'nav-header--aside';
+  }
+}
+
+function menuClickHandler(event) {
+  if (event.target.tagName !== 'A') return;
+
+  MENU.querySelectorAll('li > a').forEach(element => {
+      element.classList.remove('header__link--active');
+  });
+  
+  event.target.classList.add('header__link--active');
+
+  if (HAMBURGER.classList.contains('hamburger-button--active')) {
+    hamburgerClickHandler();
+  }
 }
 
 MENU.addEventListener('click', menuClickHandler);
@@ -83,7 +110,7 @@ function hideItem(direction) {
 	items[currentItem].classList.add(direction);
 	items[currentItem].addEventListener('animationend', function() {
 		this.classList.remove('active', direction);
-	});
+	}, { once: true });
 }
 
 function showItem(direction) {
@@ -94,7 +121,7 @@ function showItem(direction) {
 		this.classList.remove('next', direction);
 		this.classList.add('active');
 		isEnabled = true;
-	});
+	}, { once: true });
 }
 
 function changeBackground(slide) {
