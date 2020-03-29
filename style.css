@@ -1013,7 +1013,7 @@ textarea {
 @media (max-width: 1019px) {
 
     .header {
-        padding: 32px 0 31.3px 0;
+        padding: 31px 0 32px 0;
         border-bottom-width: 5.62px;
     }
 
@@ -1027,7 +1027,7 @@ textarea {
     }
 
     .slider {
-        padding: 40px 0 42px 0;
+        padding: 42px 0 42px 0;
         height: calc(100vw * (451.76 / 768));
         border-bottom-width: 4.52px;
     }
@@ -1122,10 +1122,11 @@ textarea {
 
     .our-services-title {
         font-size: 30px;
-        line-height: 36px;
+        line-height: 39px;
     }
 
     .our-services-text {
+        margin-top: 18px;
         line-height: 29px;
         letter-spacing: -0.01px;
     }
@@ -1141,7 +1142,7 @@ textarea {
     }
 
     .services-block__item:first-child {
-        margin-bottom: 54px;
+        margin-bottom: 55px;
     }
 
     .portfolio {
@@ -1150,10 +1151,12 @@ textarea {
     }
 
     .portfolio-title {
-        line-height: 36px;
+        line-height: 38px;
+        letter-spacing: -0.06px;
     }
 
     .portfolio-text {
+        margin-top: 18px;
         text-align: left;
         word-spacing: 3px;
     }
@@ -1163,7 +1166,7 @@ textarea {
     }
 
     .portfolio-images {
-        margin: 23px -5px 0;
+        margin: 22px -5px 0;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
     }
@@ -1174,7 +1177,7 @@ textarea {
     }
 
     .about {
-        padding: 17px 0 67px 0;
+        padding: 15px 0 69px 0;
     }
 
     .about-title {
@@ -1188,12 +1191,12 @@ textarea {
     }
 
     .employee-info {
-        margin-top: 37px;
+        margin-top: 39px;
     }
 
-    /* .employee-img.pixel {
-        transform: translateX(-0.5px);
-    }  */
+    .employee-img.pixel {
+        transform: translateX(1px);
+    }  
 
     .employee-data {
         width: calc((100% - 2 * 15px) / 3);
@@ -1204,16 +1207,49 @@ textarea {
     }
 
     .employee-text {
-        margin-top: 5px;
+        margin-top: 3px;
+        line-height: 21px;
         flex-grow: 1;
+    }
+
+    .employee-socials {
+        margin-top: 12px;
+    }
+
+    .contact-us {
+        padding-top: 57px;
+        padding-bottom: 39px;
+    }
+
+    .contacts-form {
+        margin-top: 25px;
     }
 
     .form {
         width: calc((100% - 29px) * 0.6728);
     }
 
+    .input {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin-bottom: 11px;
+    }
+
+    .input-textarea {
+        height: 160px;
+    }
+
+    .input-submit {
+        margin-top: 7px;
+    }
+
     .information {
         width: calc((100% - 29px) * 0.3191);
+    }
+
+    .contact-form-text {
+        margin-top: 3px;
+        margin-bottom: 10px;
     }
 
     .modal-content {
